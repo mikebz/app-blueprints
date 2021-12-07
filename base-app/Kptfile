@@ -1,0 +1,12 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: base-app
+  annotations:
+    blueprints.cloud.google.com/title: "Base app"
+    cft.dev/base-version: "1"
+info:
+  description: Base app for deriving other apps
+pipeline:
+  mutators:
+  validators:
