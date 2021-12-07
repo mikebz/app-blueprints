@@ -4,24 +4,26 @@ metadata:
   name: ghost
   annotations:
     blueprints.cloud.google.com/title: 'Ghost'
-    cft.dev/package-version: '1'
+    cft.dev/package-version: '2'
     cft.dev/base-version: '1'
 upstream:
   type: git
   git:
-    repo: https://github.com/platkrm/chris-app-blueprints
+    repo: 'https://github.com/platkrm/chris-app-blueprints'
     directory: /base-app
     ref: main
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
-    repo: https://github.com/platkrm/chris-app-blueprints
+    repo: 'https://github.com/platkrm/chris-app-blueprints'
     directory: /base-app
     ref: main
     commit: 0b93060037b38898aeba3a91ab6f58799ead4d1e
 info:
   description: Ghost app for a single team.
+  keywords: []
 pipeline:
   mutators:
-  validators:
+  - image: >-
+      us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/set-namespace:latest
