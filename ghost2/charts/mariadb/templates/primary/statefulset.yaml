@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: ghost-mariadb
-  namespace: default
+  namespace: example-ns
   labels:
     app.kubernetes.io/name: mariadb
     helm.sh/chart: mariadb-9.6.1
@@ -52,13 +52,13 @@ spec:
         fsGroup: 1001
       containers:
       - name: mariadb
-        image: 'docker.io/bitnami/mariadb:10.5.12-debian-10-r32'
+        image: docker.io/bitnami/mariadb:10.5.12-debian-10-r32
         imagePullPolicy: IfNotPresent
         securityContext:
           runAsUser: 1001
         env:
         - name: BITNAMI_DEBUG
-          value: 'false'
+          value: "false"
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -85,7 +85,7 @@ spec:
           exec:
             command:
             - /bin/bash
-            - '-ec'
+            - -ec
             - |
               password_aux="${MARIADB_ROOT_PASSWORD:-}"
               if [[ -f "${MARIADB_ROOT_PASSWORD_FILE:-}" ]]; then
@@ -101,7 +101,7 @@ spec:
           exec:
             command:
             - /bin/bash
-            - '-ec'
+            - -ec
             - |
               password_aux="${MARIADB_ROOT_PASSWORD:-}"
               if [[ -f "${MARIADB_ROOT_PASSWORD_FILE:-}" ]]; then
