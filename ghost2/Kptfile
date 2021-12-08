@@ -4,7 +4,7 @@ metadata:
   name: ghost
   annotations:
     blueprints.cloud.google.com/title: 'Ghost'
-    cft.dev/package-version: '2'
+    cft.dev/package-version: '3'
     cft.dev/base-version: '1'
 upstream:
   type: git
@@ -25,5 +25,6 @@ info:
   keywords: []
 pipeline:
   mutators:
-  - image: >-
-      us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/set-namespace:latest
+  - image: 'gcr.io/kpt-fn/set-namespace:v0.1'
+    configMap:
+      namespace: example-ns
