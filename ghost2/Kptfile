@@ -4,7 +4,7 @@ metadata:
   name: ghost
   annotations:
     blueprints.cloud.google.com/title: 'Ghost'
-    cft.dev/package-version: '2'
+    cft.dev/package-version: '4'
     cft.dev/base-version: '1'
 upstream:
   type: git
