@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: ghost-mariadb
-  namespace: example-ns
+  namespace: ghost-ns
   labels:
     app.kubernetes.io/name: mariadb
     helm.sh/chart: mariadb-9.6.1
@@ -46,8 +46,8 @@ spec:
               - default
               topologyKey: kubernetes.io/hostname
             weight: 1
-        podAffinity: null
         nodeAffinity: null
+        podAffinity: null
       securityContext:
         fsGroup: 1001
       containers:
