@@ -10,7 +10,6 @@ metadata:
     app.kubernetes.io/instance: ghost
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: primary
-    apptype: todo
 spec:
   type: ClusterIP
   ports:
@@ -23,4 +22,3 @@ spec:
     app.kubernetes.io/name: mariadb
     app.kubernetes.io/instance: ghost
     app.kubernetes.io/component: primary
-    apptype: todo

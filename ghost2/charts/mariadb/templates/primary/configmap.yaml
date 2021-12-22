@@ -10,7 +10,6 @@ metadata:
     app.kubernetes.io/instance: ghost
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: primary
-    apptype: todo
 data:
   my.cnf: |-
     [mysqld]
