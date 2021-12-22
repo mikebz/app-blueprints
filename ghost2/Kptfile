@@ -4,7 +4,7 @@ metadata:
   name: ghost
   annotations:
     blueprints.cloud.google.com/title: 'Ghost'
-    cft.dev/package-version: '6'
+    cft.dev/package-version: '7'
     cft.dev/base-version: '1'
     internal.config.kubernetes.io/index: '0'
     internal.config.kubernetes.io/path: 'Kptfile'
@@ -30,10 +30,3 @@ pipeline:
   - image: 'gcr.io/kpt-fn/set-namespace:v0.1'
     configMap:
       namespace: ghost-ns
-  - image: 'gcr.io/kpt-fn/set-labels:v0.1'
-    configMap:
-      apptype: todo
-  validators:
-  - image: 'us-central1-docker.pkg.dev/mikebz-ex1/mbzcr/check-labels:v0.1'
-    configMap:
-      labels: apptype
