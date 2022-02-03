@@ -4,7 +4,7 @@ metadata:
   name: ghost
   annotations:
     blueprints.cloud.google.com/title: 'Ghost'
-    cft.dev/package-version: '14'
+    cft.dev/package-version: '15'
     cft.dev/base-version: '1'
     internal.config.kubernetes.io/index: '0'
     internal.config.kubernetes.io/path: 'Kptfile'
